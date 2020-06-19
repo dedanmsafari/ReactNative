@@ -1,44 +1,52 @@
-import React from 'react'
-import { StyleSheet,View,Image, TouchableWithoutFeedback } from 'react-native'
-import colors from '../config/colors'
-import AppText from './Text'
+import React from "react";
+import {
+  StyleSheet,
+  View,
+  Image,
+  TouchableWithoutFeedback,
+} from "react-native";
+import colors from "../config/colors";
+import Text from "./Text";
 
-const Card = ({title,subTitle,imageUrl, onPress}) => {
-    return (
-        <TouchableWithoutFeedback onPress={onPress}>
-
-        <View style={styles.card}>
-        <Image style={styles.image} source={{uri : imageUrl}} />
+const Card = ({ title, subTitle, imageUrl, onPress }) => {
+  return (
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.card}>
+        <Image style={styles.image} source={{ uri: imageUrl }} />
         <View style={styles.textContainer}>
-     <AppText numberOfLines={1} style={styles.title}>{title}</AppText>
-     <AppText numberOfLines={2} style={styles.subTitle}>{subTitle}</AppText>
-            </View>  
+          <Text numberOfLines={1} style={styles.title}>
+            {title}
+          </Text>
+          <Text numberOfLines={2} style={styles.subTitle}>
+            {subTitle}
+          </Text>
         </View>
-        </TouchableWithoutFeedback>
-    )
-}
+      </View>
+    </TouchableWithoutFeedback>
+  );
+};
 
-export default Card
+export default Card;
 
 const styles = StyleSheet.create({
-    card:{
-      borderRadius: 10,
-      backgroundColor: colors.white,
-      marginBottom:20,
-       overflow:'hidden'
-    },
-    image:{
-        width:'100%',
-        height:200
-    },
-    textContainer:{
-        padding: 20
-    },
-    subTitle:{
-color:colors.auxiliary,
-fontWeight:'bold',
-    },
-    title:{
-       marginBottom:10 
-    }
-})
+  card: {
+    borderRadius: 10,
+    backgroundColor: colors.white,
+    marginBottom: 20,
+    overflow: "hidden",
+  },
+  image: {
+    width: "100%",
+    height: 200,
+  },
+  textContainer: {
+    padding: 20,
+  },
+  subTitle: {
+    color: colors.auxiliary,
+    fontWeight: "bold",
+  },
+  title: {
+    marginBottom: 10,
+  },
+});
